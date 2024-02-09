@@ -40,7 +40,7 @@ service:
       receivers: [otlp]
       exporters: [debug, otlp/elastic]
     metrics:
-      receivers: [otlp]
+      receivers: [spanmetrics]
       exporters: [debug, otlp/elastic]
     logs: 
       receivers: [otlp]
