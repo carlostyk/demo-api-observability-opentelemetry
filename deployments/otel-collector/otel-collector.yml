@@ -20,6 +20,14 @@ exporters:
       insecure: true
   prometheus:
     endpoint: "otel-collector:9464"
+  debug:
+    verbosity: detailed
+  otlp/data-prepper:
+    endpoint: host.docker.internal:21890
+    tls:
+      insecure: true
+
+
 connectors:
   spanmetrics:
     histogram:
@@ -30,14 +38,19 @@ connectors:
       - name: http.status_code
       - name: tyk.api.name
       - name: tyk.gw.id
+      - name: tyk.api.version
       - name: service.version
+      - name: tyk.api.apikey.alias
 service:
   pipelines:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [otlp, spanmetrics]
+      exporters: [otlp, spanmetrics, otlp/data-prepper]
     metrics:
       receivers: [spanmetrics]
       processors: [transform]
       exporters: [prometheus]
+    logs: 
+      receivers: [otlp]
+      exporters: [debug]
