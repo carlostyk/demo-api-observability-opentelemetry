@@ -27,7 +27,7 @@ raw-trace-pipeline:
         hosts: ["https://opensearch-node1:9200"]
         insecure: true
         username: admin
-        password: TykOpenSearch1!
+        password: TykOpenSearch1234!
         index_type: trace-analytics-raw
 service-map-pipeline:
   delay: "100"
@@ -45,5 +45,5 @@ service-map-pipeline:
         hosts: ["https://opensearch-node1:9200"]
         insecure: true
         username: admin
-        password: TykOpenSearch1!
+        password: TykOpenSearch1234!
         index_type: trace-analytics-service-map
