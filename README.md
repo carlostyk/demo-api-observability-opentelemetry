@@ -17,7 +17,7 @@ git clone -b patch-1 https://github.com/carlostyk/demo-api-observability-opentel
 2. Modify the tyk.conf file to add the Hybrid configuration
 
 ```
-cd ./demo-api-observability-opentelemetry-patch-1/
+cd ./demo-api-observability-opentelemetry/
 ```
 ```
 sudo vim ./deployments/tyk-gateway/tyk.conf
@@ -31,7 +31,7 @@ sudo vim ./deployments/tyk-gateway/tyk.conf
 4. Start the services
 
 ```
-docker compose up -d
+docker-compose up -d
 ```
 
 4. Verify that all services are running
