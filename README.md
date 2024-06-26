@@ -23,7 +23,7 @@ cd ./demo-api-observability-opentelemetry/
 sudo vim ./deployments/tyk-gateway/tyk.conf
 ```
 ```
-"rpc_key": "<ORG_ID>",
+"rpc_key": "<USER_KEY>",
 "api_key": "<API-KEY>",
 "connection_string": "<MDCB-INGRESS>:443",
 ```
